@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fa5 2</title>
+</head>
+<body>
+    <input type="text" id="nameInput">
+    <button onclick="addName()">Add</button>
+    <button onclick="removeName()">Remove</button>
+    <p id="NameList"></p>
+
+    <script>
+        var myarray = [];
+
+        function addName() {
+            var nameInput = document.getElementById("nameInput");
+            var newName = nameInput.value.trim();
+
+            if (newName !== "") {
+                if (myarray.length >= 7) {
+                    myarray.shift();
+                }
+                myarray.push(newName);
+                displayName();
+            }
+
+            nameInput.value = "";
+        }
+
+        function removeName() {
+            if (myarray.length > 0) {
+                myarray.pop();
+                displayName();
+            }
+        }
+
+        function displayName() {
+            var NameList = document.getElementById("NameList");
+            var namesText = "";
+
+            for (var i = 0; i < myarray.length; i++) {
+                namesText += myarray[i];
+                if (i !== myarray.length - 1) {
+                    namesText += " ";
+                }
+            }
+
+            NameList.textContent = namesText;
+        }
+    </script>
+</body>
+</html>
+
+

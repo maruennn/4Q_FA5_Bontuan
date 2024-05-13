@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Generator</title>
+</head>
+<body>
+    <script>
+    
+        var number = prompt("Please enter a number.");
+        while (isNaN(number)) {
+            alert("Please enter a valid number.");
+            number = prompt("Please enter a number.");
+        }
+
+      
+        document.write("Number inputted: " + number + "<br><br>");
+
+        
+        for (var x = number; x >= 1; x--) {
+            if (number % 2 == 1) {
+                for (var y = 0; y < number; y++) {
+                    document.write(x + " ");
+                }
+            } else {
+                for (var y = 0; y < x; y++) {
+                    document.write(x + " ");
+                }
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
